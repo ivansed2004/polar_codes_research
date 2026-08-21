@@ -1,4 +1,4 @@
-# **AWGN CHANNEL LLR DATA ANALYSIS AND MACHINE LEARNING FOR BIT ERROR NUMBER PREDICTION FOR A POLAR CODES DECODER**
+# **Data analysis of LLR and Machine Learning model to predict bit error numbers in polar code decoder for AWGN channel**
 
 ## Introduction
 
