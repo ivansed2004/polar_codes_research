@@ -1,33 +1,46 @@
 # **Data analysis of LLR and Machine Learning model to predict bit error numbers in polar code decoder for AWGN channel**
 
-## Introduction
-
-**Polar codes** are block codes that have been proposed by Erdal Arikan, IEEE Senior Member, in 2009.
-
 ## Glossarium
 
 1. AWGN -> Additive White Gaussian Noise
-2. LLR -> Log-Likelihood Ratio
+2. B-DMC -> Binary-input Discrete Memoryless Channel
 3. FEC -> Forward Error Correction
+4. LDPC -> Low Density Parity Check
+5. LLR -> Log-Likelihood Ratio
+6. PBCH -> Physical Broadcast CHannel
+7. PDCCH -> Physical Downlink Control CHannel
+8. PUCCH -> Physical Uplink Shared CHannel
+9. PDSCH -> Physical Downlink Shared CHannel
+6. PUSCH -> Physical Uplink Control CHannel
+8. SCL -> Successive Cancellation List
+9. UE -> User Equipment
 
+## Introduction
 
-## 1. What are Polar codes?
+**Polar codes** are block codes that have been proposed by Erdal Arikan, IEEE Senior Member, in 2009 [1].
+The core concept of polar codes is **CHANNEL POLARIZATION**. The Theorem of Channel Polarization [1] proves that by applying a recursive linear transformation to $N = 2^n$ independent copies of a B-DMC $W$, the synthesized bit-channels $W_N^{(i)}$ split into two extremes as $N \to \infty$:
+1. **Perfect Channels**: A fraction of subchannels becomes completely noiseless, with symmetric capacity $I(W_N^{(i)}) \to 1$.
+2. **Useless Channels**: The remaining subchannels become completely noisy, with capacity $I(W_N^{(i)}) \to 0$.
 
-The following references can help readers to get acquainted properly with this kind of codes:
+The fraction of Perfect Channels acquires the capacity $I(W)$ of the original channel $W$. The capacity $I(W)$ to be achieved simply by sending data over the good subchannels and freezing the bad ones. Roughly, the mathematics of B-DMC allows for "squeezing" the ideal channels from the original channel leaving the useless ones out of communications.
+
+## Applications & Use Cases
+
+Polar codes are successfully applied for Control and Broadcast Channels (PDCCH, PUCCH, PBCH) [2] in 5G radio interface due to their superior performance on short payloads (up to N = 1024 bits) and SCL decoding complexity as O(N*logN) [1], while LDPC codes handle large-block Shared Channels (PDSCH, PUSCH) to maximize Shannon capacity.
+
+## References
 
 **[1] Channel polarization: A method for constructing capacity-achieving codes for symmetric binary-input memoryless channels**
 
-The fundamental Arikan's work introducing polar codes. The author dives deep into Shannon's information theory, FEC, introduces channel poralization as a concept, derives the Shannon channel capacity expression *I(W)* for the exact polarized channel and, finally, demonstrates the encoder and decoder algorithm structures. The work contains more than 20 A4 pages of pure mathematical reasoning and derivations, so the strong mathematical and information theory knowledge required.
+The fundamental Arikan's work introducing polar codes. The author dives deep into Shannon's information theory, FEC, introduces channel polarization as a concept, derives the Shannon channel capacity expression *I(W)* for the exact polarized channel and, finally, demonstrates the encoder and decoder algorithm structures.
 
 > **Source:** https://arxiv.org/pdf/0807.3917
 
+**[2] 3GPP TS 38.212 "Multiplexing and channel coding"**
 
+The specification defines the detailed implementation of physical layer multiplexing and channel coding in 5G NR. Section 5 specifies the general mathematical operations and coding schemes, including LDPC codes, Polar codes, and short block codes. Both Section 6 and Section 7 specify the transport channel and control information processing for the uplink and downlink respectively. With respect to polar codes, all the control information is coded by them.
 
-**[2] ???**
-
-### 1.1. The fundamentals for Polar codes
-
-The core concept of polar codes is **CHANNEL POLARIZATION**.
+> **Source:** https://www.etsi.org/deliver/etsi_ts/138200_138299/138212/17.10.00_60/ts_138212v171000p.pdf
 
 ## 2. Data
 
