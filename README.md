@@ -26,13 +26,13 @@ The fraction of Perfect Channels acquires the capacity $I(W)$ of the original ch
 
 ## Applications & Use Cases
 
-Polar codes are successfully applied for Control and Broadcast Channels (PDCCH, PUCCH, PBCH) [2] in 5G radio interface due to their superior performance on short payloads (up to N = 1024 bits) and SCL decoding complexity as O(N*logN) [1], while LDPC codes handle large-block Shared Channels (PDSCH, PUSCH) to maximize Shannon capacity.
+Polar codes are successfully applied for Control and Broadcast Channels (PDCCH, PUCCH, PBCH) [2] in 5G radio interface due to their superior performance on short payloads (up to N = 1024 bits) and SCL decoding complexity as $O(N*logN)$ [1], while LDPC codes handle large-block Shared Channels (PDSCH, PUSCH) to maximize Shannon capacity.
 
 ## References
 
 **[1] Channel polarization: A method for constructing capacity-achieving codes for symmetric binary-input memoryless channels**
 
-The fundamental Arikan's work introducing polar codes. The author dives deep into Shannon's information theory, FEC, introduces channel polarization as a concept, derives the Shannon channel capacity expression *I(W)* for the exact polarized channel and, finally, demonstrates the encoder and decoder algorithm structures.
+The fundamental Arikan's work introducing polar codes. The author dives deep into Shannon's information theory, FEC, introduces channel polarization as a concept, derives the Shannon channel capacity expression $I(W)$ for the exact polarized channel and, finally, demonstrates the encoder and decoder algorithm structures.
 
 > **Source:** https://arxiv.org/pdf/0807.3917
 
@@ -42,6 +42,46 @@ The specification defines the detailed implementation of physical layer multiple
 
 > **Source:** https://www.etsi.org/deliver/etsi_ts/138200_138299/138212/17.10.00_60/ts_138212v171000p.pdf
 
-## 2. Data
+----------------------------------------------------------------------------------------------------------------------------------------------------
 
-> **Dataset source:** https://www.kaggle.com/datasets/furkanercan88/5g-control-channel-transmission-dataset/data
+## Goal
+
+Prediction of error numbers for a codeword coming to the decoder from an AWGN channel.
+Though the decoding algorithm takes only $O(N*logN)$ operations, proactive reaction allows to de. Moreover, according to the 5G/6G requirements
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Data analysis & Machine Learning
+
+> **Source:** https://www.kaggle.com/datasets/furkanercan88/5g-control-channel-transmission-dataset/data
+
+**Samples**: 100000
+
+**Features**: 512
+
+**Target**: 1
+
+### Features
+Each feature represents a LLR of a polarized channel. As we have 512 features, the codeword vector length is 512 bits. Each bit is processed individually in separated polarized channels $W^{(i)}_{512}$.
+### The definition of LLR
+
+The polar code decoder is a soft-decision decoder, so it accounts both bit threshold itself and likelihood of a bit.
+// LLR FORMULAE
+
+1. If LLR < 0, the bit coming is likely to be '1'.
+2. If LLR > 0, the bit coming is likely to be '0'.
+3. The absolute value |LLR| reflects the measure of "confidence" or, more precisely, likelihood of a bit.
+
+### LLR for normal distribution (AWGN channel)
+
+// AWGN LLR FORMULAE
+
+Thus, LLR for a channel is inversely proportional to channel variance. Sometimes work with variance is more convenient: it's always a positive number. Though the information about a bit is lost, the absolute value completely reflects the likelihood of a bit whatever it was. It's a variance that will be used furthermore to analyze the dataset.
+
+### Target
+
+Represents the number of error bits for a sample.
+
+### Hypothesis
+
+The presence of error numbers can be related to the high variance value, more precisely, to how many times the high variance values appear in a sample.
