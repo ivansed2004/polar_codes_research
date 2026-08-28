@@ -42,6 +42,12 @@ The specification defines the detailed implementation of physical layer multiple
 
 > **Source:** https://www.etsi.org/deliver/etsi_ts/138200_138299/138212/17.10.00_60/ts_138212v171000p.pdf
 
+**[3] Successive Cancellation List Polar Decoder using Log-likelihood Ratios**
+
+The enhanced decoding algorithm compared to standard SC (Successive Cancellation). Involves LLR instead of separated Likelihood functions for '0' and '1'. The article proposes the algorithm based on code tree: successively recognizing a bit by bit moving down the tree. The word 'successive' is key because $u_1^{(i)}$ can be hard-decoded only when $u_1^{(i-1)}$ and previous ones are known in advance.
+
+> **Source:** https://arxiv.org/pdf/1411.7282
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Goal
