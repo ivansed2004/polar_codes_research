@@ -71,8 +71,9 @@ Though the decoding algorithm takes only $O(N*logN)$ operations, proactive react
 Each feature represents a LLR of a polarized channel. As we have 512 features, the codeword vector length is 512 bits. Each bit is processed individually in separated polarized channels $W^{(i)}_{512}$.
 ### The definition of LLR
 
-The polar code decoder is a soft-decision decoder, so it accounts both bit threshold itself and likelihood of a bit.
-// LLR FORMULAE
+The polar code decoder is a soft-decision decoder, so it accounts both bit threshold itself and likelihood of a bit. Given that +1 symbol corresponds to bit '0', -1 symbol corresponds to '1'.
+
+<img width="310" height="91" alt="Screenshot from 2026-09-07 20-38-40" src="https://github.com/user-attachments/assets/fd23e8af-3237-4f6e-ab53-3413b7712be0" />
 
 1. If LLR < 0, the bit coming is likely to be '1'.
 2. If LLR > 0, the bit coming is likely to be '0'.
@@ -80,7 +81,7 @@ The polar code decoder is a soft-decision decoder, so it accounts both bit thres
 
 ### LLR for normal distribution (AWGN channel)
 
-// AWGN LLR FORMULAE
+<img width="203" height="76" alt="Screenshot from 2026-09-07 20-42-26" src="https://github.com/user-attachments/assets/99e6cff6-6aec-4bb1-81f5-bda01b4df038" />
 
 Thus, LLR for a channel is inversely proportional to channel variance. Sometimes work with variance is more convenient: it's always a positive number. Though the information about a bit is lost, the absolute value completely reflects the likelihood of a bit whatever it was. It's a variance that will be used furthermore to analyze the dataset.
 
@@ -90,4 +91,5 @@ Represents the number of error bits for a sample.
 
 ### Hypothesis
 
-The presence of error numbers can be related to the high variance value, more precisely, to how many times the high variance values appear in a sample.
+1. The presence of error numbers can be related to the high variance value, more precisely, to how many times the high variance values appear in a sample.
+2. The more low-LLR values in a sample, the higher a number of error.
