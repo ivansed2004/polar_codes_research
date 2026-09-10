@@ -53,7 +53,9 @@ The enhanced decoding algorithm compared to standard SC (Successive Cancellation
 ## Goal
 
 Prediction of error numbers for a codeword coming to the decoder from an AWGN channel.
-Though the decoding algorithm takes only $O(N*logN)$ operations, proactive reaction allows to de. Moreover, according to the 5G/6G requirements
+Though the decoding algorithm takes only $O(N*logN)$ operations, proactive reaction allows to accelerate avoiding long-term decoding process. The goal completely adopts the 5G/6G requirements claiming **low-latency communications** (uRLLC for 5G and hRLLC for 6G).
+
+Perhaps, it's not a final project's goal and there will be other ones depending on insights coming.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
