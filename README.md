@@ -85,7 +85,7 @@ The polar code decoder is a soft-decision decoder, so it accounts both bit thres
 
 <img width="203" height="76" alt="Screenshot from 2026-09-07 20-42-26" src="https://github.com/user-attachments/assets/99e6cff6-6aec-4bb1-81f5-bda01b4df038" />
 
-Thus, LLR for a channel is inversely proportional to channel variance. Sometimes work with variance is more convenient: it's always a positive number. Though the information about a bit is lost, the absolute value completely reflects the likelihood of a bit whatever it was. It's a variance that will be used furthermore to analyze the dataset.
+Thus, LLR for a channel is inversely proportional to channel variance. Sometimes work with variance is more convenient: it's always a positive number. Though the information about a bit is lost, the absolute value completely reflects the likelihood of a bit whatever it was. It's a variance that will be used further to analyze the dataset.
 
 ### Target
 
