@@ -9,9 +9,9 @@
 5. LLR -> Log-Likelihood Ratio
 6. PBCH -> Physical Broadcast CHannel
 7. PDCCH -> Physical Downlink Control CHannel
-8. PUCCH -> Physical Uplink Chared CHannel
+8. PUCCH -> Physical Uplink Control CHannel
 9. PDSCH -> Physical Downlink Shared CHannel
-6. PUSCH -> Physical Uplink Sontrol CHannel
+6. PUSCH -> Physical Uplink Shared CHannel
 8. SCL -> Successive Cancellation List
 9. UE -> User Equipment
 
