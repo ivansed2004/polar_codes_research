@@ -103,3 +103,7 @@ Represents the number of error bits for a sample.
 ### Conclusion
 
 // Here will be results
+
+### Machine Learning metrics
+
+// Here will be learning metrics
