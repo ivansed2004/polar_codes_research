@@ -91,7 +91,15 @@ Thus, LLR for a channel is inversely proportional to channel variance. Sometimes
 
 Represents the number of error bits for a sample.
 
-### Hypothesis
+### Hypotheses
 
 1. The presence of error numbers can be related to the high variance value, more precisely, to how many times the high variance values appear in a sample.
 2. The more low-LLR values in a sample, the higher a number of error.
+
+### Research results
+
+// Here will be results
+
+### Conclusion
+
+// Here will be results
