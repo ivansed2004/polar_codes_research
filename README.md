@@ -19,8 +19,8 @@
 
 **Polar codes** are block codes that have been proposed by Erdal Arikan, IEEE Senior Member, in 2009 [1].
 The core concept of polar codes is **CHANNEL POLARIZATION**. The Theorem of Channel Polarization [1] proves that by applying a recursive linear transformation to $N = 2^n$ independent copies of a B-DMC $W$, the synthesized bit-channels $W_N^{(i)}$ split into two extremes as $N \to \infty$:
-1. **Perfect Channels**: A fraction of subchannels becomes completely noiseless, with symmetric capacity $I(W_N^{(i)}) \to 1$.
-2. **Useless Channels**: The remaining subchannels become completely noisy, with capacity $I(W_N^{(i)}) \to 0$.
+1. **Perfect Channels**: A fraction of subchannels becomes completely noiseless, with symmetric capacity $I(W_N^{(i)}) \to I(W)$.
+2. **Useless Channels**: The remaining subchannels become completely noisy, with capacity $I(W_N^{(i)}) \to 1-I(W)$.
 
 The fraction of Perfect Channels acquires the capacity $I(W)$ of the original channel $W$. The capacity $I(W)$ to be achieved simply by sending data over the good subchannels and freezing the bad ones. Roughly, the mathematics of B-DMC allows for "squeezing" the ideal channels from the original channel leaving the useless ones out of communications.
 
