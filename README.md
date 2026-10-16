@@ -20,7 +20,7 @@
 **Polar codes** are block codes that have been proposed by Erdal Arikan, IEEE Senior Member, in 2009 [1].
 The core concept of polar codes is **CHANNEL POLARIZATION**. The Theorem of Channel Polarization [1] proves that by applying a recursive linear transformation to $N = 2^n$, for any $δ \in (0; 1)$, the synthesized B-DMC $W_N^{(i)}$ (derived from N copies of original channel $W$) split into two extremes as $N \to \infty$:
 1. **Case 1**: A fraction of subchannels acquires the symmetric capacity $I(W_N^{(i)}) \to I(W)$, where $I(W_N^{(i)}) \in (1-δ; 1]$.
-2. **Case 2**: The remaining subchannels acquire capacity $I(W_N^{(i)}) \to 1-I(W)$, where $I(W_N^{(i)}) \in (0; δ]$.
+2. **Case 2**: The remaining subchannels acquire capacity $I(W_N^{(i)}) \to 1-I(W)$, where $I(W_N^{(i)}) \in [0; δ)$.
 
 The definition of polar codes $(N, K, A, u_{A^{c}})$ includes the following [1]:
 1. $N$ - the overall number of bits in a codeword;
