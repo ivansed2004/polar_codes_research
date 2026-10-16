@@ -18,11 +18,19 @@
 ## Introduction
 
 **Polar codes** are block codes that have been proposed by Erdal Arikan, IEEE Senior Member, in 2009 [1].
-The core concept of polar codes is **CHANNEL POLARIZATION**. The Theorem of Channel Polarization [1] proves that by applying a recursive linear transformation to $N = 2^n$ independent copies of a B-DMC $W$, the synthesized bit-channels $W_N^{(i)}$ split into two extremes as $N \to \infty$:
-1. **Perfect Channels**: A fraction of subchannels becomes completely noiseless, with symmetric capacity $I(W_N^{(i)}) \to I(W)$.
-2. **Useless Channels**: The remaining subchannels become completely noisy, with capacity $I(W_N^{(i)}) \to 1-I(W)$.
+The core concept of polar codes is **CHANNEL POLARIZATION**. The Theorem of Channel Polarization [1] proves that by applying a recursive linear transformation to $N = 2^n$, for any $δ \in (0; 1)$, the synthesized B-DMC $W_N^{(i)}$ (derived from N copies of original channel $W$) split into two extremes as $N \to \infty$:
+1. A fraction of subchannels acquires the symmetric capacity $I(W_N^{(i)}) \to I(W)$, where $I(W_N^{(i)}) \in (1-δ; 1]$.
+2. The remaining subchannels acquire capacity $I(W_N^{(i)}) \to 1-I(W)$, where $I(W_N^{(i)}) \in (0; δ]$.
 
-The fraction of Perfect Channels acquires the capacity $I(W)$ of the original channel $W$. The capacity $I(W)$ to be achieved simply by sending data over the good subchannels and freezing the bad ones. Roughly, the mathematics of B-DMC allows for "squeezing" the ideal channels from the original channel leaving the useless ones out of communications.
+The definition of polar codes $(N, K, A, u_{A^{c}})$ includes the following [1]:
+1. $N$ - the overall number of bits in a codeword;
+2. $K$ - the number of information bits;
+3. $A$ - the set of unknown bits that requires to be decoded;
+4. $u_{A^{c}}$ - the set of so called frozen bits.
+
+Let $u_{i}$ be a **frozen bit**, a bit with the predefined value known both for a transmitter and a receiver. When declaring the polar codes, frozen bits are included in $u_{A^{c}}$. For example, for code (8,5,{3,5,6,7,8},(0,0,0)) $u_1$ = $u_2$ = $u_4$ = 0 regardless of the DE (decision element) output for the corresponding channel. It's obvious that these bits are better to be sent to useless channels. The remaining bits ($u_3$, $u_5$, $u_6$, $u_7$, $u_8$) acquire the value depending on the DE output based on LLR in the perfect channels.
+
+Polar codes are Shannon Capacity-achieving codes [1] and are widely used in practice [2].
 
 ## Applications & Use Cases
 
