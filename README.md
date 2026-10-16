@@ -32,7 +32,7 @@ Let $u_{i}$ be a **frozen bit**, a bit with the predefined value known both for 
 
 ## Applications & Use Cases
 
-Polar codes are successfully applied for Control and Broadcast Channels (PDCCH, PUCCH, PBCH) [2] in 5G radio interface due to their superior performance on short payloads (up to N = 1024 bits) and SCL decoding complexity as $O(LN*logN)$ [1], while LDPC codes handle large-block Shared Channels (PDSCH, PUSCH) to reach Shannon capacity.
+Polar codes are successfully applied for Control and Broadcast Channels (PDCCH, PUCCH, PBCH) [2] in 5G radio interface due to their superior performance on short payloads (up to N = 1024 bits) and SCL decoding complexity as $O(LN*logN)$ [3], while LDPC codes handle large-block Shared Channels (PDSCH, PUSCH) to reach Shannon capacity.
 
 ## References
 
