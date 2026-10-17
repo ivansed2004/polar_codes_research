@@ -28,7 +28,7 @@ The definition of polar codes $(N, K, A, u_{A^{c}})$ includes the following [1]:
 3. $A$ - the set of unknown bits to be decoded;
 4. $u_{A^{c}}$ - the set of so called frozen bits.
 
-Let $u_{i}$ be a **frozen bit**, a bit with the predefined value known both for a transmitter and a receiver. When declaring the polar codes, frozen bits are included in $u_{A^{c}}$. For example, for code (8,5,{3,5,6,7,8},(0,0,0)) $u_1$ = $u_2$ = $u_4$ = 0 regardless of the DE (decision element) output for the corresponding channel. It's obvious that these bits are better to be sent using **Case-2** subchannels. The remaining bits ($u_3$, $u_5$, $u_6$, $u_7$, $u_8$) acquire the value depending on the DE output based on LLR in the **Case-1** subchannels. The channel polarization is a phenomenon that makes it possible.
+Let $u_{i}$ be a **frozen bit**, a bit with the predefined value known both for a transmitter and a receiver. When declaring the polar codes, frozen bits are included in $u_{A^{c}}$. For example, for code (8,5,{3,5,6,7,8},(0,0,0)) $u_1$ = $u_2$ = $u_4$ = 0 regardless of the DE (decision element) output for the corresponding channel. It's obvious to send them using **Case-2** subchannels. The remaining bits ($u_3$, $u_5$, $u_6$, $u_7$, $u_8$) acquire the value depending on the DE output based on LLR in the **Case-1** subchannels. The channel polarization is a phenomenon that makes it possible.
 
 ## Applications & Use Cases
 
