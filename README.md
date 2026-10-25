@@ -61,8 +61,6 @@ The enhanced decoding algorithm compared to standard SC (Successive Cancellation
 Prediction of error numbers for a codeword coming to the decoder from an AWGN channel.
 Though the decoding algorithm takes only $O(N*logN)$ operations, proactive reaction allows to accelerate avoiding long-term decoding process. The goal completely adopts the 5G/6G requirements claiming **low-latency communications** (uRLLC for 5G and hRLLC for 6G).
 
-Perhaps, it's not a final project's goal and there will be other ones depending on insights coming.
-
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Data analysis & Machine Learning
@@ -99,8 +97,7 @@ Represents the number of error bits for a sample.
 
 ### Hypotheses
 
-1. The presence of error numbers can be related to the high variance value, more precisely, to how many times the high variance values appear in a sample.
-2. The more low-LLR values in a sample, the higher a number of error.
+- **Mapping**. Using data analysis of the original dataset, some artificial mathematical object can be found that allows to correspond it to the number of error of a row (codeword).
 
 ### Research results
 
@@ -108,8 +105,41 @@ Represents the number of error bits for a sample.
 
 ### Conclusion
 
-// Here will be results
+// Here will be conclusion
 
 ### Machine Learning metrics
 
-// Here will be learning metrics
+**1. Regression model (XGBRegressor):** \
+    **1.1. The first attempt:** \
+        1.1.1. Train MSE: 0.1258 \
+        1.1.2. Train MAE: 0.2087 \
+        1.1.3. Train R^2: 0.8576 \
+        1.1.4. Test MSE: 0.3744 \
+        1.1.5. Test MAE: 0.3413 \
+        1.1.6. Test R^2: 0.5757 \
+   **1.2. The second attempt:** \
+        1.2.1. Train MSE: 0.1221 \
+        1.2.2. Train MAE: 0.2059 \
+        1.2.3. Train R^2: 0.8617 \
+        1.2.4. Test MSE: 0.3817 \
+        1.2.5. Test MAE: 0.3416 \
+        1.2.6. Test R^2: 0.5684 \
+**2. Classification model (Multiple Additive Regression Trees, MAPT):** \
+    **2.1. The first attempt:** \
+        2.1.1. Train Accuracy: 0.8013 \
+        2.1.2. Train Precision: 0.8157 \
+        2.1.3. Train Recall: 0.8013 \
+        2.1.4. Train F1-Score: 0.7167 \
+        2.1.5. Test Accuracy: 0.7985 \
+        2.1.6. Test Precision: 0.6764 \
+        2.1.7. Test Recall: 0.7985 \
+        2.1.8. Test F1-Score: 0.7099 \
+    **2.2. The second attempt:** \
+        2.2.1. Train Accuracy: 0.8013 \
+        2.2.2. Train Precision: 0.8157 \
+        2.2.3. Train Recall: 0.8013 \
+        2.2.4. Train F1-Score: 0.7167 \
+        2.2.5. Test Accuracy: 0.7985 \
+        2.2.6. Test Precision: 0.6764 \
+        2.2.7. Test Recall: 0.7985 \
+        2.2.8. Test F1-Score: 0.7099
